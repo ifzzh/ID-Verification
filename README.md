@@ -56,7 +56,7 @@
 2. 克隆或下载本项目到本地。
 3. 安装所需的依赖库：
    ```bash
-   pip install --r requirements.txt
+   pip install -r requirements.txt
    ```
 4. 准备一个包含身份证号码的Excel文件（例如`身份证.xlsx`）。
 5. 运行`main.py`脚本，它将读取Excel文件中的身份证号码，并在校验后更新Excel文件。
