@@ -1,0 +1,7 @@
+# ID Verification System Requirements
+
+# Openpyxl is used for reading and writing Excel files
+openpyxl==3.0.7
+
+# Regular expressions for validation purposes
+# Python comes with the 're' module by default, no need to install separately

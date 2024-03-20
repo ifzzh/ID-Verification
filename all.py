@@ -7,7 +7,7 @@ fp = open('./归属地.json','r',encoding='utf8')
 area_dict = json.load(fp)
 
 
-
+# checkArea.py
 def checkArea(areaId):
     '''校验地区。输入6位地区编码字符串，返回：{code, id, {province, city, district, note}}'''
     if len(areaId) != 6:
@@ -20,7 +20,7 @@ def checkArea(areaId):
         return {'code': 'Error', 'id': areaId, 'area': '未知区域码'}
     
 
-
+# checkBirthdate.py/
 def checkBirthdate(ymd):
     '''校验出生日期。输入8位出生日期字符串，返回：{code, id, age, {year, month, day}}'''
     if len(ymd) != 8:
@@ -47,6 +47,7 @@ def checkBirthdate(ymd):
     return {'code': 'Error', 'id': ymd, 'age': '非法出生日期', 'date': ''}
 
 
+# checkGender.py
 def checkGender(gender):
     '''校验性别。输入1位性别编码字符串，返回：{code, id, gender}'''
     if len(gender) != 1:
@@ -70,6 +71,7 @@ def checkGender(gender):
 coe = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
 lastNum = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2']
 
+# checkNum.py
 def checkNum(id):
     '''校验校验码。输入18位字符串，返回：{code, id, area, age, gender, jym}'''
     if len(id) != 18:
@@ -88,6 +90,7 @@ def checkNum(id):
 
 
 
+# main.py
 import checkArea
 from checkArea import checkArea
 from checkNum import checkNum
@@ -161,15 +164,5 @@ for i in range(len(idList)):
     ws.cell(row=i+2, column=7, value=res_note)
     ws.cell(row=i+2, column=8, value=res_date)
     ws.cell(row=i+2, column=9, value=res_gender)
-    
-    # ws.cell(row=i+2, column=2, value=res)
-    # print(id, areaResult['area']['province'])
-    # ws.cell(row=i+2, column=3, value=areaResult['area']['province'])
-    # ws.cell(row=i+2, column=4, value=areaResult['area']['city'])
-    # ws.cell(row=i+2, column=5, value=areaResult['area']['district'])
-    # ws.cell(row=i+2, column=6, value=areaResult['area']['note'])
-    # ws.cell(row=i+2, column=7, value=str(birthdateResult['date']['year'])+'年'+str(birthdateResult['date']['month'])+'月'+str(birthdateResult['date']['day'])+'日')
-    # ws.cell(row=i+2, column=8, value=genderResult['gender'])
-
 # 保存xlsx文件
 wb.save('身份证.xlsx')

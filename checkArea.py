@@ -21,7 +21,3 @@ def checkArea(areaId):
 #     print(checkArea('110000')) # 北京市
 #     print(checkArea('130000')) # 河北省
 #     print(checkArea('130100')) # 石家庄市
-#     print(checkArea('130101')) # 石家庄市
-#     print(checkArea('130102')) # 石家庄市
-#     print(checkArea('370602')) # 石家庄市
-#     print(checkArea('339005')) # 石家庄市
